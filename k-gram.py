@@ -6,11 +6,13 @@ class Correct:
         self.k = k
         self.wordsList = wordsList
 
-    def getKGrams(self, word):
+    def getKGrams(self, word, k=0):
+        if k == 0:
+            k = self.k
         kgrams = []
         if len(word) >= 2:
-            for i in range(len(word)-self.k):
-                kgrams.append(word[i:i+self.k])
+            for i in range(len(word)-k):
+                kgrams.append(word[i:i+k])
         return kgrams
 
     def jaccard(self, word1, word2):
@@ -22,7 +24,7 @@ class Correct:
         self.index = {}
         for i in range(len(self.wordsList)):
             #Only store the first k-gram 
-            kgram = self.getKGrams(self.wordsList[i])
+            kgram = self.getKGrams(self.wordsList[i], 2)
             if len(kgram) >= 1:
                 kgram = kgram[0]
                 if kgram not in self.index.keys():
@@ -43,7 +45,7 @@ class Correct:
             return ""
         else:
             if len(word) >= 2:
-                firstGram = self.getKGrams(word)[0]
+                firstGram = self.getKGrams(word, 2)[0]
                 if firstGram in self.index.keys():
                     similarWords = self.index[firstGram]
                     for i in range(len(similarWords)):
@@ -66,7 +68,6 @@ print(len(wordsList))
 c = Correct(wordsList, 2)
 # c.createIndex()
 c.loadIndex('./index.json')
-res = c.suggest("latop")
-print(c.jaccard("latop", "laptop"))
+res = c.suggest("palontolody")
 # print(res)
 print(res[len(res)-2])
