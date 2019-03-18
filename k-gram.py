@@ -64,10 +64,10 @@ def load_words():
     return valid_words
 
 wordsList = load_words()
-print(len(wordsList))
+# print(len(wordsList))
 c = Correct(wordsList, 2)
 # c.createIndex()
 c.loadIndex('./index.json')
-res = c.suggest("palontolody")
+res = c.suggest("laptop")
 # print(res)
-print(res[len(res)-2])
+print(res[len(res)-1])
