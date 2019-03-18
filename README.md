@@ -1,5 +1,5 @@
-## K-Gram Spell Checker
-This is a simple K-Gram spell checker with basic indexing. The indexing here is only to retrieve words with the same initial bi-gram. Similarity is calculated using Jaccard coefficient.  
+## K-Gram Spell Corrector
+This is a simple K-Gram spell corrector with basic indexing. The indexing here is only to retrieve words with the same initial bi-gram. Similarity is calculated using Jaccard coefficient.  
 
 ### Create Index
 ```python
