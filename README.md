@@ -1,4 +1,7 @@
 ## K-Gram Spell Corrector
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/acd14b694f124576976f24f0406e8f49)](https://app.codacy.com/app/cvhariharan/K-Gram-Spell-corrector?utm_source=github.com&utm_medium=referral&utm_content=cvhariharan/K-Gram-Spell-corrector&utm_campaign=Badge_Grade_Dashboard)
+
 This is a simple K-Gram spell corrector with basic indexing. The indexing here is only to retrieve words with the same initial bi-gram. Similarity is calculated using Jaccard coefficient.  
 
 ### Create Index
